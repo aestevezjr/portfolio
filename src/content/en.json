@@ -87,6 +87,10 @@
           "light": "/projects/facturas-app-list.webp",
           "dark": "/projects/facturas-app-list-dark.webp",
           "alt": "FacturasApp invoice list with status filters, search and pagination"
+        },
+        "video": {
+          "light": { "webm": "/projects/facturas-app-demo-light.webm", "mp4": "/projects/facturas-app-demo-light.mp4" },
+          "dark": { "webm": "/projects/facturas-app-demo-dark.webm", "mp4": "/projects/facturas-app-demo-dark.mp4" }
         }
       },
       {

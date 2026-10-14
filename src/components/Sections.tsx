@@ -5,6 +5,7 @@ import { cvPath } from "@/lib/site";
 import { CountUp } from "./motion/CountUp";
 import { FactLine } from "./motion/FactLine";
 import { Reveal } from "./motion/Reveal";
+import { ProjectVideo } from "./ProjectVideo";
 import { Schematic } from "./motion/Schematic";
 
 type Props = { dict: Dictionary; lang: Locale };
@@ -177,6 +178,8 @@ export function Projects({ dict }: Props) {
       <div className="mt-14 space-y-20 md:space-y-28">
         {projects.items.map((project, i) => {
           const repos = "repoSecondary" in project && project.repoSecondary ? [project.repo, project.repoSecondary] : [project.repo];
+          const image = "image" in project ? project.image : undefined;
+          const video = "video" in project ? project.video : undefined;
           return (
             <article key={project.slug} className="grid gap-8 md:grid-cols-12 md:gap-10">
               <Reveal className={`md:col-span-7 ${i % 2 ? "md:order-2" : ""}`}>
@@ -186,11 +189,21 @@ export function Projects({ dict }: Props) {
                     <span className="size-2 rounded-full bg-rule" />
                     <span className="size-2 rounded-full bg-rule" />
                   </div>
-                  {"image" in project && project.image ? (
+                  {video && image ? (
+                    <div className="h-[calc(100%-2rem)] overflow-hidden">
+                      <ProjectVideo
+                        light={video.light}
+                        dark={video.dark}
+                        posterLight={image.light}
+                        posterDark={image.dark}
+                        label={image.alt}
+                      />
+                    </div>
+                  ) : image ? (
                     <div className="relative h-[calc(100%-2rem)] overflow-hidden">
                       {/* Light and dark captures; the active theme decides which one shows. */}
-                      <Image src={project.image.light} alt={project.image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="h-full w-full object-cover object-left-top dark:hidden" />
-                      <Image src={project.image.dark} alt={project.image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="hidden h-full w-full object-cover object-left-top dark:block" />
+                      <Image src={image.light} alt={image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="h-full w-full object-cover object-left-top dark:hidden" />
+                      <Image src={image.dark} alt={image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="hidden h-full w-full object-cover object-left-top dark:block" />
                     </div>
                   ) : (
                     <div
