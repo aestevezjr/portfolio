@@ -90,8 +90,27 @@
   text-transform: uppercase;
 }
 
+/*
+ * Hero entrance in pure CSS: it runs before hydration, so the largest
+ * contentful paint does not wait for JavaScript. It starts at 0.01 rather
+ * than 0 because Chrome ignores elements first painted fully transparent
+ * when picking the LCP element.
+ */
+@keyframes rise {
+  from {
+    opacity: 0.01;
+    transform: translateY(14px);
+  }
+}
+.rise {
+  animation: rise 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .rise {
+    animation: none;
   }
 }

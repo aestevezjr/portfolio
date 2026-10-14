@@ -32,7 +32,7 @@ export function Hero({ dict, lang }: Props) {
   const { hero, contact } = dict;
   return (
     <section className={`${container} pb-20 pt-14 md:pb-28 md:pt-24`}>
-      <Reveal onLoad className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+      <div className="rise flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
         <p className="label text-mute">{hero.role}</p>
         <p className="label flex flex-wrap items-center gap-x-2.5 gap-y-1 text-ink">
           <span className="relative flex size-2" aria-hidden>
@@ -42,9 +42,9 @@ export function Hero({ dict, lang }: Props) {
           <span>{hero.status}</span>
           <span className="whitespace-nowrap text-mute">· {hero.location}</span>
         </p>
-      </Reveal>
+      </div>
 
-      <Reveal onLoad delay={0.08}>
+      <div className="rise" style={{ animationDelay: "80ms" }}>
         <h1 className="display-wide mt-8 text-[clamp(2.9rem,10.5vw,8rem)] font-extrabold leading-[0.88] tracking-[-0.035em]">
           {hero.name.split(" ").map((part) => (
             <span key={part} className="block">
@@ -52,13 +52,13 @@ export function Hero({ dict, lang }: Props) {
             </span>
           ))}
         </h1>
-      </Reveal>
+      </div>
 
       <div className="mt-10 grid gap-10 md:grid-cols-12 md:items-end">
-        <Reveal onLoad delay={0.18} className="md:col-span-7">
+        <div className="rise md:col-span-7" style={{ animationDelay: "180ms" }}>
           <p className="max-w-[34ch] text-xl leading-snug md:text-2xl">{hero.headline}</p>
-        </Reveal>
-        <Reveal onLoad delay={0.26} className="flex flex-wrap items-center gap-3 md:col-span-5 md:justify-end">
+        </div>
+        <div style={{ animationDelay: "260ms" }} className="rise flex flex-wrap items-center gap-3 md:col-span-5 md:justify-end">
           <a
             href="#case-study"
             className="group inline-flex items-center gap-2 rounded-sm bg-ink px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-signal"
@@ -81,7 +81,7 @@ export function Hero({ dict, lang }: Props) {
               LinkedIn <ArrowUpRight />
             </a>
           </span>
-        </Reveal>
+        </div>
       </div>
 
       <FactLine facts={hero.facts} delay={0.55} />

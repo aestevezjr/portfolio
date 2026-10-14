@@ -124,7 +124,7 @@
         "highlights": [
           "Static export with per-language metadata, hreflang and structured data",
           "Server components by default; client code only where there is motion",
-          "Lighthouse 95+ across performance, accessibility and SEO"
+          "Lighthouse 100 for accessibility and best practices, with zero layout shift"
         ],
         "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
         "repo": "https://github.com/aestevezjr/portfolio",

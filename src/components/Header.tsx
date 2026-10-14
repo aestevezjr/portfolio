@@ -21,8 +21,11 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         {nav.skip}
       </a>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
-        <a href={`/${lang}/`} className="display-wide text-sm font-extrabold tracking-tight" aria-label={dict.hero.name}>
-          A<span className="text-signal">/</span>E
+        <a href={`/${lang}/`} className="display-wide text-sm font-extrabold tracking-tight">
+          <span aria-hidden>
+            A<span className="text-signal">/</span>E
+          </span>
+          <span className="sr-only">{dict.hero.name}</span>
         </a>
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-7 text-sm text-mute">
