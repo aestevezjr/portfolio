@@ -4,7 +4,7 @@ import { MotionProvider } from "@/components/motion/MotionProvider";
 import "../globals.css";
 import { fontVariables, themeScript } from "@/lib/fonts";
 import { getDictionary, hasLocale, locales } from "@/lib/i18n";
-import { siteUrl } from "@/lib/site";
+import { indexable, siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     metadataBase: new URL(siteUrl),
     title: meta.title,
     description: meta.description,
+    robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
     alternates: {
       canonical: `/${lang}/`,
       languages: { en: "/en/", es: "/es/", "x-default": "/en/" },
