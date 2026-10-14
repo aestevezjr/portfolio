@@ -2,9 +2,9 @@ import { ImageResponse } from "next/og";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site";
 
-export const alt = "Agustín Estévez — Senior Full-Stack Engineer & Technical Lead";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// Served as /{lang}/og.png: a real .png path gets the right content type and
+// no trailing-slash redirect, which link previews (LinkedIn, WhatsApp) need.
+const ogSize = { width: 1200, height: 630 };
 
 // Rendered once per language at build time (static export).
 export const dynamic = "force-static";
@@ -27,7 +27,7 @@ async function googleFont(family: string, axes: string, text: string) {
   return (await fetch(src[1])).arrayBuffer();
 }
 
-export default async function Image({ params }: { params: Promise<{ lang: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ lang: string }> }) {
   const { lang: raw } = await params;
   const lang: Locale = hasLocale(raw) ? raw : "en";
   const { hero } = getDictionary(lang);
@@ -82,7 +82,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
       </div>
     ),
     {
-      ...size,
+      ...ogSize,
       fonts: [
         { name: "Archivo", data: display, weight: 800, style: "normal" },
         { name: "Plex Sans", data: sans, weight: 400, style: "normal" },

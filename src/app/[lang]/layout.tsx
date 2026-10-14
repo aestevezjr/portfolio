@@ -39,8 +39,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       url: `/${lang}/`,
       locale: lang === "es" ? "es_DO" : "en_US",
       siteName: "Agustín Estévez",
+      images: [{ url: `/${lang}/og.png`, width: 1200, height: 630, alt: meta.title, type: "image/png" }],
     },
-    twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
+    twitter: { card: "summary_large_image", title: meta.title, description: meta.description, images: [`/${lang}/og.png`] },
   };
 }
 
