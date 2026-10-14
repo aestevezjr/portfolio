@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Agustín Estévez — Ingeniero Full-Stack Senior y Líder Técnico",
+    "description": "Ingeniero full-stack senior y líder técnico con más de 20 años diseñando y poniendo en producción sistemas empresariales con Java, Spring Boot, Oracle, React y Angular."
+  },
+  "nav": {
+    "work": "Caso de estudio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "switchLang": "English",
+    "toggleTheme": "Cambiar modo oscuro",
+    "hintDark": "Prueba el modo oscuro",
+    "hintLight": "Prueba el modo claro",
+    "skip": "Saltar al contenido"
+  },
+  "hero": {
+    "role": "Ingeniero Full-Stack Senior · Líder Técnico",
+    "name": "Agustín Estévez",
+    "headline": "Diseño y construyo los sistemas que mantienen sincronizados a los equipos de campo, las APIs y las bases de datos, y que siguen funcionando en producción durante años.",
+    "status": "Disponible para roles full-stack remotos",
+    "location": "Santo Domingo · GMT-4",
+    "ctaProjects": "Ver mi trabajo",
+    "ctaCv": "Descargar CV",
+    "facts": [
+      { "value": "20+", "label": "años desarrollando software" },
+      { "value": "9", "label": "ingenieros liderados actualmente" },
+      { "value": "2.400", "label": "inspecciones de campo al día en un sistema que diseñé" }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "body": [
+      "Empecé como desarrollador en 2006 y evolucioné hacia el análisis de negocio, el modelado de datos, el diseño de soluciones y el liderazgo técnico, sin dejar nunca de programar.",
+      "La mayor parte de mi trabajo está donde los sistemas se encuentran: dispositivos Android que sincronizan con plataformas web, procesos batch que alimentan sistemas comerciales, aplicaciones heredadas migradas a stacks modernos. Me importan los modelos de datos claros, el código probado y las soluciones que siguen siendo fáciles de cambiar diez años después.",
+      "Últimamente trabajo con ingeniería asistida por IA: agentes personalizados de Claude Code para QA, seguridad y revisión de código, respaldados por una práctica sólida de testing con JUnit, Mockito y Vitest."
+    ]
+  },
+  "caseStudy": {
+    "eyebrow": "Caso de estudio destacado · INDRA",
+    "title": "Gestión Comercial Móvil de Clientes (GCM)",
+    "problem": {
+      "label": "El problema",
+      "text": "Dos distribuidoras eléctricas de República Dominicana contrataban clientes e inspeccionaban propiedades en papel. Incorporar un cliente nuevo al ciclo de facturación podía tardar meses."
+    },
+    "role": {
+      "label": "Mi rol",
+      "text": "Líder de proyecto y arquitecto de soluciones, desde los requisitos de negocio hasta producción. Definí el alcance con los stakeholders, diseñé el modelo de datos y las integraciones, y lideré un equipo de hasta 7 ingenieros."
+    },
+    "solution": {
+      "label": "La solución",
+      "text": "Una plataforma que digitalizó la contratación y las inspecciones de campo: los dispositivos Android sincronizan por REST con una aplicación web Spring, y procesos batch en Oracle PL/SQL validan cada registro contra las reglas de negocio antes de actualizar el Sistema de Gestión Comercial (SGC)."
+    },
+    "diagram": {
+      "title": "Cómo fluyen los datos en GCM",
+      "nodes": ["Dispositivos Android", "API REST", "Aplicación web Spring", "Batch Oracle PL/SQL", "Sistema comercial (SGC)"]
+    },
+    "metricsTitle": "En producción hoy",
+    "metrics": [
+      { "value": 675000, "suffix": "+", "label": "propiedades" },
+      { "value": 813000, "suffix": "+", "label": "puntos de servicio" },
+      { "value": 2400, "suffix": "", "label": "inspecciones al día" },
+      { "value": 500, "suffix": "+", "label": "usuarios registrados" }
+    ],
+    "impact": "La incorporación de clientes pasó de meses a días, muchas veces el mismo día.",
+    "stack": ["Oracle PL/SQL", "Spring", "Android", "APIs REST"]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "intro": "Trabajo full-stack reciente, construido de punta a punta y con tests.",
+    "viewRepo": "Ver repositorio",
+    "items": [
+      {
+        "slug": "facturas-app",
+        "name": "FacturasApp",
+        "tagline": "Aplicación de facturación full-stack asistida por IA",
+        "description": "Una aplicación de facturación que construí dirigiendo a Claude Code: escribí las reglas de arquitectura, diseñé agentes propios para QA, hardening de seguridad y revisión de código Angular, y los orquesté a lo largo del proyecto.",
+        "highlights": [
+          "Suite de 95 tests de backend: unitarios, capa web, repositorio e integración",
+          "JWT en cookies HttpOnly, protección CSRF, rate limiting por IP y cabeceras de seguridad",
+          "Servidor MCP propio en TypeScript, más integraciones con Supabase y Playwright"
+        ],
+        "stack": ["Angular 17", "Spring Boot 3.4", "Spring Security", "PostgreSQL", "JUnit 5", "Claude Code"],
+        "repo": "https://github.com/aestevezjr/demo-claudecode"
+      },
+      {
+        "slug": "realtime-chat",
+        "name": "Chat en tiempo real",
+        "tagline": "Chat WebSocket hecho a mano",
+        "description": "Un chat en tiempo real que escribí a mano para afianzar mi práctica de testing y frontend: presencia, indicador de escritura e historial persistente.",
+        "highlights": [
+          "Backend en Spring Boot 4 con mensajería WebSocket/STOMP y persistencia JPA",
+          "Frontend en React 19 + TypeScript con la lógica de conexión, mensajes y escritura en custom hooks",
+          "Tests por capas: MockMvc, @DataJpaTest, Vitest y React Testing Library con fake timers"
+        ],
+        "stack": ["Java 17", "Spring Boot 4", "WebSocket/STOMP", "React 19", "TypeScript", "Vitest"],
+        "repo": "https://github.com/aestevezjr/chat-backend-manual",
+        "repoSecondary": "https://github.com/aestevezjr/chat-react-manual"
+      },
+      {
+        "slug": "portfolio",
+        "name": "Este portfolio",
+        "tagline": "Estático, bilingüe y rápido",
+        "description": "Construido con Next.js y React, exportado como sitio estático para SEO, con versiones en inglés y español y animaciones que respetan la preferencia de movimiento reducido.",
+        "highlights": [
+          "Export estático con metadatos por idioma, hreflang y datos estructurados",
+          "Componentes de servidor por defecto; código de cliente solo donde hay animación",
+          "Lighthouse 95+ en rendimiento, accesibilidad y SEO"
+        ],
+        "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+        "repo": "https://github.com/aestevezjr/portfolio"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experiencia",
+    "roles": [
+      {
+        "company": "INDRA Sistemas",
+        "title": "Líder de Proyecto — Arquitecto de Soluciones",
+        "period": "2010 — Actualidad",
+        "projects": [
+          {
+            "name": "GCM — Gestión Comercial Móvil de Clientes",
+            "summary": "Diseñé y lideré la plataforma que digitalizó la contratación de clientes y las inspecciones de campo para dos distribuidoras eléctricas. En producción desde 2016."
+          },
+          {
+            "name": "Modernización de plataforma de inventario — Banco Popular",
+            "summary": "Lideré la migración de Classic ASP a ASP.NET MVC. Diseñé una base de datos totalmente normalizada y defendí el rediseño pese a la presión del cronograma, lo que hizo posible adoptar Entity Framework."
+          },
+          {
+            "name": "Control de pérdidas de energía — AES SONEL, Camerún",
+            "summary": "Mejoré una aplicación empresarial PHP/Oracle y pasé un mes en sitio apoyando la puesta en marcha, trabajando en inglés con los equipos del cliente."
+          },
+          {
+            "name": "Captura de datos de clientes — EDESUR",
+            "summary": "Lideré un equipo de tres en un sistema .NET y Windows Mobile, la base de lo que luego sería GCM."
+          }
+        ]
+      },
+      {
+        "company": "Caribe SID (Páginas Amarillas)",
+        "title": "Desarrollador Web",
+        "period": "2008 — 2010",
+        "summary": "Mantuve los portales de Páginas Amarillas de República Dominicana y Puerto Rico, creé una versión móvil ligera y diseñé desde cero la intranet de la empresa en ASP.NET y C#."
+      },
+      {
+        "company": "FL Betances & Asociados",
+        "title": "Desarrollador Cliente-Servidor",
+        "period": "2007 — 2008",
+        "summary": "Migré el sistema de cajas de una entidad financiera de COBOL a .NET y construí de punta a punta un módulo de flujo de tarjetas de crédito en VB.NET."
+      },
+      {
+        "company": "TSI Dominicana",
+        "title": "Desarrollador",
+        "period": "2006 — 2007",
+        "summary": "Primer rol profesional: un sistema de activación de tarjetas telefónicas prepago integrado con servicios de telecomunicaciones externos."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "groups": [
+      { "name": "Backend", "items": ["Java", "Spring Boot", "Spring Security", "C#", "ASP.NET MVC", ".NET Web API", "Entity Framework", "PHP"] },
+      { "name": "Frontend", "items": ["React", "Angular", "TypeScript", "Angular Material", "Bootstrap"] },
+      { "name": "Testing", "items": ["JUnit 5", "Mockito", "AssertJ", "MockMvc", "@DataJpaTest", "Vitest", "React Testing Library"] },
+      { "name": "Datos", "items": ["Oracle", "PL/SQL", "SQL Server", "T-SQL", "PostgreSQL", "Modelado relacional", "Normalización"] },
+      { "name": "Arquitectura", "items": ["REST", "SOAP", "WebSocket/STOMP", "Integración de sistemas", "Sistemas distribuidos", "Sincronización móvil ↔ web"] },
+      { "name": "Ingeniería asistida por IA", "items": ["Agentes de Claude Code", "Skills y hooks", "Servidores MCP propios", "GitHub Copilot"] },
+      { "name": "Cloud y herramientas", "items": ["AWS EC2", "AWS S3", "Git", "Scrum", "IntelliJ", "VS Code"] }
+    ]
+  },
+  "education": {
+    "title": "Formación",
+    "items": [
+      { "degree": "Maestría en Ingeniería de Sistemas — Sistemas de Gestión", "school": "Universidad Dominicana O&M", "period": "2010 — 2012", "note": "Asignaturas completadas" },
+      { "degree": "Ingeniería de Sistemas", "school": "Universidad Dominicana O&M", "period": "2005 — 2009" }
+    ],
+    "languages": "Español (nativo) · Inglés (nivel profesional)"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "text": "Busco roles full-stack remotos donde importen la buena arquitectura y el código probado. La forma más rápida de contactarme es por email.",
+    "email": "agestevezjr@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/agust%C3%ADn-est%C3%A9vez",
+    "github": "https://github.com/aestevezjr",
+    "cv": "Descargar CV (PDF)"
+  },
+  "footer": "Diseñado y desarrollado por Agustín Estévez."
+}

@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local design comparison pages
+design-previews*.html
+
+# Personal Claude Code settings
+.claude/settings.local.json
+
+# Local-only files (original CV with phone)
+_private/

@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Agustín Estévez — Senior Full-Stack Engineer & Tech Lead",
+    "description": "Senior full-stack engineer and technical lead with 20+ years designing and shipping enterprise systems in Java, Spring Boot, Oracle, React and Angular."
+  },
+  "nav": {
+    "work": "Case study",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "switchLang": "Español",
+    "toggleTheme": "Toggle dark mode",
+    "hintDark": "Try dark mode",
+    "hintLight": "Try light mode",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "role": "Senior Full-Stack Engineer · Technical Lead",
+    "name": "Agustín Estévez",
+    "headline": "I design and build the systems that keep field teams, APIs and databases in sync — and keep them running in production for years.",
+    "status": "Open to remote full-stack roles",
+    "location": "Santo Domingo · GMT-4",
+    "ctaProjects": "See my work",
+    "ctaCv": "Download CV",
+    "facts": [
+      { "value": "20+", "label": "years shipping software" },
+      { "value": "9", "label": "engineers currently led" },
+      { "value": "2,400", "label": "field inspections a day on a system I designed" }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "body": [
+      "I started as a developer in 2006 and grew into business analysis, data modeling, solution design and technical leadership — without ever stepping away from the code.",
+      "Most of my work lives where systems meet: Android devices syncing with web platforms, batch processes feeding commercial systems, legacy apps migrated to modern stacks. I care about clear data models, tested code and solutions that are still easy to change ten years later.",
+      "Lately I build with AI-assisted engineering: custom Claude Code agents for QA, security and code review, backed by a solid testing practice with JUnit, Mockito and Vitest."
+    ]
+  },
+  "caseStudy": {
+    "eyebrow": "Featured case study · INDRA",
+    "title": "Mobile Customer Engagement Management (GCM)",
+    "problem": {
+      "label": "The problem",
+      "text": "Two electric distribution companies in the Dominican Republic contracted customers and inspected properties on paper. Getting a new customer into the billing cycle could take months."
+    },
+    "role": {
+      "label": "My role",
+      "text": "Project leader and solution architect, from business requirements to production. I defined the scope with stakeholders, designed the data model and integrations, and led a team of up to 7 engineers."
+    },
+    "solution": {
+      "label": "The solution",
+      "text": "A platform that digitized contracting and field inspections: Android devices sync over REST with a Spring web application, and Oracle PL/SQL batch processes validate every record against business rules before it updates the Commercial Management System (SGC)."
+    },
+    "diagram": {
+      "title": "How data flows through GCM",
+      "nodes": ["Android devices", "REST API", "Spring web app", "Oracle PL/SQL batch", "Commercial system (SGC)"]
+    },
+    "metricsTitle": "In production today",
+    "metrics": [
+      { "value": 675000, "suffix": "+", "label": "properties" },
+      { "value": 813000, "suffix": "+", "label": "service points" },
+      { "value": 2400, "suffix": "", "label": "inspections a day" },
+      { "value": 500, "suffix": "+", "label": "registered users" }
+    ],
+    "impact": "Customer onboarding went from months to days — often the same day.",
+    "stack": ["Oracle PL/SQL", "Spring", "Android", "REST APIs"]
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "Recent full-stack work, built end to end and fully tested.",
+    "viewRepo": "View repository",
+    "items": [
+      {
+        "slug": "facturas-app",
+        "name": "FacturasApp",
+        "tagline": "AI-assisted full-stack invoicing app",
+        "description": "An invoicing application I built by directing Claude Code: I wrote the architecture rules, designed custom agents for QA, security hardening and Angular code review, and orchestrated them across the project.",
+        "highlights": [
+          "95-test backend suite: unit, web layer, repository and integration",
+          "JWT in HttpOnly cookies, CSRF protection, per-IP rate limiting and security headers",
+          "Custom MCP server in TypeScript, plus Supabase and Playwright integrations"
+        ],
+        "stack": ["Angular 17", "Spring Boot 3.4", "Spring Security", "PostgreSQL", "JUnit 5", "Claude Code"],
+        "repo": "https://github.com/aestevezjr/demo-claudecode"
+      },
+      {
+        "slug": "realtime-chat",
+        "name": "Real-Time Chat",
+        "tagline": "Hand-built WebSocket chat",
+        "description": "A real-time chat I wrote by hand to sharpen my testing and frontend practice: presence, typing indicators and persisted history.",
+        "highlights": [
+          "Spring Boot 4 backend with WebSocket/STOMP messaging and JPA persistence",
+          "React 19 + TypeScript frontend with connection, messaging and typing logic in custom hooks",
+          "Layered tests: MockMvc, @DataJpaTest, Vitest and React Testing Library with fake timers"
+        ],
+        "stack": ["Java 17", "Spring Boot 4", "WebSocket/STOMP", "React 19", "TypeScript", "Vitest"],
+        "repo": "https://github.com/aestevezjr/chat-backend-manual",
+        "repoSecondary": "https://github.com/aestevezjr/chat-react-manual"
+      },
+      {
+        "slug": "portfolio",
+        "name": "This portfolio",
+        "tagline": "Static, bilingual and fast",
+        "description": "Built with Next.js and React, statically exported for SEO, with English and Spanish versions and motion that respects reduced-motion settings.",
+        "highlights": [
+          "Static export with per-language metadata, hreflang and structured data",
+          "Server components by default; client code only where there is motion",
+          "Lighthouse 95+ across performance, accessibility and SEO"
+        ],
+        "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+        "repo": "https://github.com/aestevezjr/portfolio"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "roles": [
+      {
+        "company": "INDRA Sistemas",
+        "title": "Project Leader — Solution Architect",
+        "period": "2010 — Present",
+        "projects": [
+          {
+            "name": "GCM — Mobile Customer Engagement Management",
+            "summary": "Designed and led the platform that digitized customer contracting and field inspections for two electric utilities. In production since 2016."
+          },
+          {
+            "name": "Inventory platform modernization — Banco Popular",
+            "summary": "Led the migration from Classic ASP to ASP.NET MVC. Designed a fully normalized database and defended the redesign despite timeline pressure, which made Entity Framework adoption possible."
+          },
+          {
+            "name": "Energy loss control — AES SONEL, Cameroon",
+            "summary": "Enhanced a PHP/Oracle enterprise application and spent a month on site supporting the go-live, working in English with customer teams."
+          },
+          {
+            "name": "Customer data capture — EDESUR",
+            "summary": "Led a team of three on a .NET and Windows Mobile system — the foundation of what later became GCM."
+          }
+        ]
+      },
+      {
+        "company": "Caribe SID (Yellow Pages)",
+        "title": "Web Developer",
+        "period": "2008 — 2010",
+        "summary": "Maintained the Dominican Republic and Puerto Rico Yellow Pages portals, built a lightweight mobile version, and designed the company intranet from scratch in ASP.NET and C#."
+      },
+      {
+        "company": "FL Betances & Asociados",
+        "title": "Client-Server Developer",
+        "period": "2007 — 2008",
+        "summary": "Migrated a bank cashier system from COBOL to .NET and built a credit card workflow module end to end in VB.NET."
+      },
+      {
+        "company": "TSI Dominicana",
+        "title": "Developer",
+        "period": "2006 — 2007",
+        "summary": "First professional role: a prepaid phone card activation system integrated with external telecom services."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "groups": [
+      { "name": "Backend", "items": ["Java", "Spring Boot", "Spring Security", "C#", "ASP.NET MVC", ".NET Web API", "Entity Framework", "PHP"] },
+      { "name": "Frontend", "items": ["React", "Angular", "TypeScript", "Angular Material", "Bootstrap"] },
+      { "name": "Testing", "items": ["JUnit 5", "Mockito", "AssertJ", "MockMvc", "@DataJpaTest", "Vitest", "React Testing Library"] },
+      { "name": "Data", "items": ["Oracle", "PL/SQL", "SQL Server", "T-SQL", "PostgreSQL", "Relational modeling", "Normalization"] },
+      { "name": "Architecture", "items": ["REST", "SOAP", "WebSocket/STOMP", "System integration", "Distributed systems", "Mobile ↔ web sync"] },
+      { "name": "AI-assisted engineering", "items": ["Claude Code agents", "Skills & hooks", "Custom MCP servers", "GitHub Copilot"] },
+      { "name": "Cloud & tools", "items": ["AWS EC2", "AWS S3", "Git", "Scrum", "IntelliJ", "VS Code"] }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      { "degree": "Master's in Systems Engineering — Management Systems", "school": "Universidad Dominicana O&M", "period": "2010 — 2012", "note": "Coursework completed" },
+      { "degree": "Systems Engineering", "school": "Universidad Dominicana O&M", "period": "2005 — 2009" }
+    ],
+    "languages": "Spanish (native) · English (professional working proficiency)"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "text": "I'm looking for remote full-stack roles where solid architecture and tested code matter. The fastest way to reach me is email.",
+    "email": "agestevezjr@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/agust%C3%ADn-est%C3%A9vez",
+    "github": "https://github.com/aestevezjr",
+    "cv": "Download CV (PDF)"
+  },
+  "footer": "Designed and built by Agustín Estévez."
+}
