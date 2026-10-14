@@ -105,7 +105,16 @@
         ],
         "stack": ["Java 17", "Spring Boot 4", "WebSocket/STOMP", "React 19", "TypeScript", "Vitest"],
         "repo": "https://github.com/aestevezjr/chat-backend-manual",
-        "repoSecondary": "https://github.com/aestevezjr/chat-react-manual"
+        "repoSecondary": "https://github.com/aestevezjr/chat-react-manual",
+        "image": {
+          "light": "/projects/realtime-chat-poster.webp",
+          "dark": "/projects/realtime-chat-poster-dark.webp",
+          "alt": "Dos ventanas de navegador chateando en tiempo real: usuarios conectados, indicador de escritura y mensajes instantáneos"
+        },
+        "video": {
+          "light": { "webm": "/projects/realtime-chat-demo-light.webm", "mp4": "/projects/realtime-chat-demo-light.mp4" },
+          "dark": { "webm": "/projects/realtime-chat-demo-dark.webm", "mp4": "/projects/realtime-chat-demo-dark.mp4" }
+        }
       },
       {
         "slug": "portfolio",
