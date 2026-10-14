@@ -127,7 +127,16 @@
           "Lighthouse 95+ en rendimiento, accesibilidad y SEO"
         ],
         "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
-        "repo": "https://github.com/aestevezjr/portfolio"
+        "repo": "https://github.com/aestevezjr/portfolio",
+        "image": {
+          "light": "/projects/portfolio-site-poster.webp",
+          "dark": "/projects/portfolio-site-poster-dark.webp",
+          "alt": "Recorrido por este portfolio: animación de entrada, diagrama animado de GCM, modo oscuro y versión en español"
+        },
+        "video": {
+          "light": { "webm": "/projects/portfolio-site-demo.webm", "mp4": "/projects/portfolio-site-demo.mp4" },
+          "dark": { "webm": "/projects/portfolio-site-demo.webm", "mp4": "/projects/portfolio-site-demo.mp4" }
+        }
       }
     ]
   },
