@@ -183,14 +183,14 @@ export function Projects({ dict }: Props) {
           return (
             <article key={project.slug} className="grid gap-8 md:grid-cols-12 md:gap-10">
               <Reveal className={`md:col-span-7 ${i % 2 ? "md:order-2" : ""}`}>
-                <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-rule bg-surface transition-transform duration-500 ease-out hover:-translate-y-1">
+                <div className="group relative overflow-hidden rounded-sm border border-rule bg-surface transition-transform duration-500 ease-out hover:-translate-y-1">
                   <div className="flex h-8 items-center gap-1.5 border-b border-rule px-3" aria-hidden>
                     <span className="size-2 rounded-full bg-rule" />
                     <span className="size-2 rounded-full bg-rule" />
                     <span className="size-2 rounded-full bg-rule" />
                   </div>
                   {video && image ? (
-                    <div className="h-[calc(100%-2rem)] overflow-hidden">
+                    <div className="aspect-[16/10] overflow-hidden">
                       <ProjectVideo
                         light={video.light}
                         dark={video.dark}
@@ -200,14 +200,14 @@ export function Projects({ dict }: Props) {
                       />
                     </div>
                   ) : image ? (
-                    <div className="relative h-[calc(100%-2rem)] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden">
                       {/* Light and dark captures; the active theme decides which one shows. */}
                       <Image src={image.light} alt={image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="h-full w-full object-cover object-left-top dark:hidden" />
                       <Image src={image.dark} alt={image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="hidden h-full w-full object-cover object-left-top dark:block" />
                     </div>
                   ) : (
                     <div
-                      className="grid h-[calc(100%-2rem)] place-items-center"
+                      className="grid aspect-[16/10] place-items-center"
                       style={{ backgroundImage: "repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in oklab, var(--rule) 45%, transparent) 14px 15px)" }}
                     >
                       <span className="display-wide text-2xl font-bold text-mute/70 md:text-3xl">{project.name}</span>
