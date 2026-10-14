@@ -82,7 +82,12 @@
           "Custom MCP server in TypeScript, plus Supabase and Playwright integrations"
         ],
         "stack": ["Angular 17", "Spring Boot 3.4", "Spring Security", "PostgreSQL", "JUnit 5", "Claude Code"],
-        "repo": "https://github.com/aestevezjr/demo-claudecode"
+        "repo": "https://github.com/aestevezjr/demo-claudecode",
+        "image": {
+          "light": "/projects/facturas-app-list.webp",
+          "dark": "/projects/facturas-app-list-dark.webp",
+          "alt": "FacturasApp invoice list with status filters, search and pagination"
+        }
       },
       {
         "slug": "realtime-chat",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Fragment } from "react";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { cvPath } from "@/lib/site";
@@ -185,12 +186,20 @@ export function Projects({ dict }: Props) {
                     <span className="size-2 rounded-full bg-rule" />
                     <span className="size-2 rounded-full bg-rule" />
                   </div>
-                  <div
-                    className="grid h-[calc(100%-2rem)] place-items-center"
-                    style={{ backgroundImage: "repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in oklab, var(--rule) 45%, transparent) 14px 15px)" }}
-                  >
-                    <span className="display-wide text-2xl font-bold text-mute/70 md:text-3xl">{project.name}</span>
-                  </div>
+                  {"image" in project && project.image ? (
+                    <div className="relative h-[calc(100%-2rem)] overflow-hidden">
+                      {/* Light and dark captures; the active theme decides which one shows. */}
+                      <Image src={project.image.light} alt={project.image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="h-full w-full object-cover object-left-top dark:hidden" />
+                      <Image src={project.image.dark} alt={project.image.alt} width={1600} height={1000} sizes="(min-width: 768px) 58vw, 100vw" className="hidden h-full w-full object-cover object-left-top dark:block" />
+                    </div>
+                  ) : (
+                    <div
+                      className="grid h-[calc(100%-2rem)] place-items-center"
+                      style={{ backgroundImage: "repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in oklab, var(--rule) 45%, transparent) 14px 15px)" }}
+                    >
+                      <span className="display-wide text-2xl font-bold text-mute/70 md:text-3xl">{project.name}</span>
+                    </div>
+                  )}
                 </div>
               </Reveal>
               <Reveal delay={0.08} className={`flex flex-col md:col-span-5 ${i % 2 ? "md:order-1" : ""}`}>
