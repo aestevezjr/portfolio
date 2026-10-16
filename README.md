@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agustín Estévez — Portfolio
 
-## Getting Started
+Personal portfolio of a senior full-stack engineer and technical lead, in English and Spanish.
 
-First, run the development server:
+**Live:** https://agustinestevez.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Open Graph card](https://agustinestevez.vercel.app/en/og.png)
+
+## Stack
+
+- **Next.js 16** (App Router) with **React 19** and **TypeScript**, built as a fully static export (`output: "export"`)
+- **Tailwind CSS v4** with design tokens for light and dark themes
+- **Motion** for animations
+- Hosted on **Vercel**
+
+## What's inside
+
+- **Bilingual routes:** `/en/` and `/es/` are pre-rendered from JSON dictionaries (`src/content/*.json`), with `hreflang` alternates, per-language metadata and Person structured data. `/` forwards to `/en/`.
+- **Featured case study:** an animated data-flow diagram of a production system (Android → REST API → Spring → Oracle PL/SQL → commercial system), with packets travelling along the links and metrics counting up when they scroll into view.
+- **Project demos:** each project card plays a short muted demo video (WebM + MP4). Only the visible clip plays, and only while the card is on screen; the active theme picks the light or dark recording.
+- **Light and dark themes:** follow the OS preference, remember the visitor's choice and apply it before first paint (no flash). First-time visitors get a one-off hint on the theme toggle.
+- **Accessibility:** semantic sections, skip link, visible focus, and `prefers-reduced-motion` respected everywhere (CSS entrance, Motion animations, demo videos).
+- **SEO and sharing:** generated `sitemap.xml` and `robots.txt`, and a 1200×630 Open Graph image per language rendered at build time (`/en/og.png`, `/es/og.png`).
+
+### Performance notes
+
+The hero entrance is plain CSS so the largest contentful paint does not wait for hydration. It starts at `opacity: 0.01` instead of `0`, because Chrome ignores elements first painted fully transparent when choosing the LCP element.
+
+Measured on the live site with a simulated mid-range phone (4× CPU slowdown, Fast 4G): **LCP 1.46 s, CLS 0**. Lighthouse scores **100** for accessibility and best practices.
+
+## Project structure
+
+```
+src/
+  app/
+    (root)/            "/" → redirect to /en/
+    [lang]/            localized page, layout/metadata, og.png route
+    sitemap.ts, robots.ts
+  components/
+    Sections.tsx       hero, about, case study, projects, experience, skills, contact
+    Header.tsx, ThemeToggle.tsx, ProjectVideo.tsx
+    motion/            Reveal, FactLine, Schematic, CountUp (client components)
+  content/             en.json, es.json — all copy lives here
+  lib/                 i18n, fonts, site config
+public/
+  cv/                  downloadable CV
+  projects/            demo videos and posters
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Server components are the default; only animated or interactive parts are client components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requires Node.js 20+.
 
-## Learn More
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # static site in out/
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+To preview the production build, serve `out/` with any static server (for example `npx serve out`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL used in metadata, sitemap and Open Graph | `https://agustinestevez.vercel.app` |
+| `NEXT_PUBLIC_INDEXABLE` | Set to `true` to let search engines index the site | unset (pages are `noindex`) |
 
-## Deploy on Vercel
+## Editing content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All text, in both languages, is in `src/content/en.json` and `src/content/es.json`. Both files must keep the same structure. Project cards take an optional `image` (light/dark posters) and `video` (light/dark WebM + MP4 sources).
