@@ -51,7 +51,7 @@ Server components are the default; only animated or interactive parts are client
 
 ## Running locally
 
-Requires Node.js 20+.
+Requires Node.js 20.9 or later.
 
 ```bash
 npm install
