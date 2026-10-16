@@ -77,7 +77,7 @@
         "tagline": "Aplicación de facturación full-stack asistida por IA",
         "description": "Una aplicación de facturación que construí dirigiendo a Claude Code: escribí las reglas de arquitectura, diseñé agentes propios para QA, hardening de seguridad y revisión de código Angular, y los orquesté a lo largo del proyecto.",
         "highlights": [
-          "Suite de 95 tests de backend: unitarios, capa web, repositorio e integración",
+          "Suite de 89 tests de backend: unitarios, capa web, repositorio e integración",
           "JWT en cookies HttpOnly, protección CSRF, rate limiting por IP y cabeceras de seguridad",
           "Servidor MCP propio en TypeScript, más integraciones con Supabase y Playwright"
         ],

@@ -77,7 +77,7 @@
         "tagline": "AI-assisted full-stack invoicing app",
         "description": "An invoicing application I built by directing Claude Code: I wrote the architecture rules, designed custom agents for QA, security hardening and Angular code review, and orchestrated them across the project.",
         "highlights": [
-          "95-test backend suite: unit, web layer, repository and integration",
+          "89-test backend suite: unit, web layer, repository and integration",
           "JWT in HttpOnly cookies, CSRF protection, per-IP rate limiting and security headers",
           "Custom MCP server in TypeScript, plus Supabase and Playwright integrations"
         ],
